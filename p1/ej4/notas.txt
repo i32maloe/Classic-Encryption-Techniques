@@ -1,0 +1,21 @@
+Al mover todas las letras con la misma clave k, las frecuencias relativas del idioma se mantienen. En español suelen destacar letras como e, a, o, s, r, n, i y en inglés e, t, a, o, i, n.
+
+Pruebo cada k del 0 al 25, descifro y cuento cuántas veces sale cada letra.
+
+Comparo lo que aparece en el texto frente a la frecuencia normal del idioma usando chi-cuadrado: cuanto menor es el valor, más se parece al idioma esperado.
+
+Ojo con la ñ y las tildes: como el script solo rota de 'a' a 'z', si hay acentos o ñ no cambian y pueden meter ruido.
+
+2. Palabras comunes o n-gramas
+Cuando el texto es corto, las frecuencias solas a veces engañan. Ahí ayuda:
+
+Contar cuántas palabras coinciden con una lista pequeña de palabras muy frecuentes (el, la, de, que, y, en o the, and, to, of).
+
+Mirar pares de letras típicos (bigramas como de, en, es o th, he, in).
+
+3. Cosas a tener en cuenta
+Si el texto es muy corto (una frase de pocas palabras), puede haber empates o dudas entre claves.
+
+Si el archivo tiene varias líneas, hay que decidir si todas usan la misma clave o si cada línea va con una distinta.
+
+Si el contenido no es lenguaje natural (por ejemplo, una contraseña o datos raros), ninguna puntuación de idioma va a acertar bien.

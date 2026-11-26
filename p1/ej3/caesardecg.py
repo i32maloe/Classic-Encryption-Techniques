@@ -10,7 +10,7 @@ if len(sys.argv) < 5:
 fileIn = sys.argv[2]
 fileOut = sys.argv[4]
 k = int(sys.argv[1])
-
+i = 0
 
 
 with open(fileIn, 'r') as entry:
@@ -32,8 +32,13 @@ with open(fileIn, 'r') as entry:
             
                 encrypt += c
 
-            out.write(encrypt)
-            encrypt = "\n"
+            if i == len(lines)-1 :
+                out.write(encrypt)
+            else:
+                out.write(encrypt+"\n")
+                        
+            encrypt=""
+            i += 1
         
     
 print("¡Desencriptado con exito!")
