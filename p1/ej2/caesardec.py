@@ -2,9 +2,10 @@
 import sys
 k = 3
 encrypt = ""
+i=0
 
 if len(sys.argv) < 4:
-    print("USO: $caesar entrada.txt -o salida.enc")
+    print("USO: $caesar entrada.enc -o salida.txt")
     exit(1)
 
 fileIn = sys.argv[1]
@@ -17,7 +18,7 @@ with open(fileIn, 'r') as entry:
     
     content = entry.read();
     lines = content.split("\n")
-    print(lines)
+    
 
     with open(fileOut,'w') as out:
         
@@ -32,8 +33,12 @@ with open(fileIn, 'r') as entry:
             
                 encrypt += c
 
-            out.write(encrypt)
-            encrypt = "\n"
-        
+            if i == len(lines)-1 :
+                out.write(encrypt)
+            else:
+                out.write(encrypt+"\n")
+            
+            encrypt=""
+            i += 1
     
 print("¡Desencriptado con exito!")

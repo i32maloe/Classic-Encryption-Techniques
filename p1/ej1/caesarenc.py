@@ -6,6 +6,7 @@ string.ascii_lowercase
 string.ascii_uppercase 
 k = 3
 encrypt = ""
+i = 0
 
 if len(sys.argv) < 4:
     print("USO: $caesar entrada.txt -o salida.enc")
@@ -38,10 +39,14 @@ with open(fileIn, 'r') as entry:
                     c = aux.upper()
             
                 encrypt += c
-                
-        
-            out.write(encrypt+"\n")
+            
+            if i == (len(lines)-1):
+                out.write(encrypt)
+            else:
+                out.write(encrypt+"\n")
+
             encrypt = ""
+            i += 1
 
 print("¡Encriptado con exito!")
             
